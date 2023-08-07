@@ -119,6 +119,10 @@ def run_script():
         # Clone the latest code from the Mangio621/Mangio-RVC-Fork repository to a temporary location
         run_cmd(f"git clone https://github.com/IAHispano/Mangio-RVC-Fork.git {temp_repo_path}")
         os.chdir(temp_repo_path)
+        print("Actualizando repo a commit 911986d33d4b67c2a1e6166770c9a9d5d613e57a")
+        run_cmd(f"git checkout fed45eb981a5295c17576caffb3ea997f0d670c6 &> /dev/null")
+        run_cmd(f"git checkout 90e1022f04112cee4ad70520e7b1b53b88398065 &> /dev/null")
+        run_cmd(f"git checkout 3103bab22bbc3bc968482f8903393dfe451422dc &> /dev/null")
         run_cmd("wget https://github.com/777gt/EasyGUI-RVC-Fork/raw/main/EasierGUI.py")
 
         # Edit the file here, before copying
