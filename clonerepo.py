@@ -134,7 +134,7 @@ def run_script():
         print("Changed path back to /content/")
         
         # Remove the temporary cloned repository
-        shutil.rmtree(temp_repo_path)
+        #shutil.rmtree(temp_repo_path)
 
     # Call the function
     clone_and_copy_repo(repo_path)
