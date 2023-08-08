@@ -118,6 +118,7 @@ def run_script():
         temp_repo_path = "/content/temp_Mangio-RVC-Fork"
         # Clone the latest code from the Mangio621/Mangio-RVC-Fork repository to a temporary location
         run_cmd(f"git clone --depth=1 https://github.com/IAHispano/Mangio-RVC-Fork/ '/content/Retrieval-based-Voice-Conversion-WebUI'")
+        print("...")
         os.chdir(temp_repo_path)
         run_cmd("wget https://github.com/777gt/EasyGUI-RVC-Fork/raw/main/EasierGUI.py")
 
