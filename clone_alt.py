@@ -115,7 +115,7 @@ def run_script():
 
     def clone_and_copy_repo(repo_path):
         # New repository link
-        new_repo_link = "https://github.com/IAHispano/Mangio-RVC-Fork.git"
+        new_repo_link = "https://github.com/IAHispano/Applio-RVC-Fork.git"
         # Temporary path to clone the repository
         temp_repo_path = "/content/temp_Mangio-RVC-Fork"
         # New folder name
@@ -145,6 +145,7 @@ def run_script():
         run_cmd("git checkout 4003a6511ab56e86d12f8df9d28954802e982b22")
         run_cmd("git checkout ba9abdc147d5f5e3f12dc8ec8388f50a356a068e")
         run_cmd("git checkout 432ed6a54a2f8ef9ff021791ad96bb16beb49388")
+        run_cmd("git checkout 8007a90414b64ee456f3361a3c64c4100cccf6e6")
 
         run_cmd("wget https://github.com/kalomaze/Mangio-Kalo-Tweaks/raw/patch-1/EasierGUI.py")
 
