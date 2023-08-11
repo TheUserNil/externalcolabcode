@@ -155,7 +155,8 @@ def run_script():
         run_cmd("git checkout 739463f58f15fd143c102f58458d483d719f6cf5")
         run_cmd("git checkout d555bcd2541ce3e78a9391f9255eb17f9753b006")
 
-        run_cmd("wget https://github.com/kalomaze/Mangio-Kalo-Tweaks/raw/patch-1/EasierGUI.py")
+        run_cmd("wget https://github.com/777gt/EasyGUI-RVC-Fork/raw/main/EasierGUI.py")
+        #https://github.com/kalomaze/Mangio-Kalo-Tweaks/raw/patch-1/EasierGUI.py
 
         # Edit the file here, before copying
         edit_file(f"{temp_repo_path}/infer-web.py")
