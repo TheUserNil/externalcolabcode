@@ -117,9 +117,39 @@ def run_script():
         # Temporary path to clone the repository
         temp_repo_path = "/content/temp_Mangio-RVC-Fork"
         # Clone the latest code from the Mangio621/Mangio-RVC-Fork repository to a temporary location
-        run_cmd(f"git clone --depth=1 https://github.com/IAHispano/Mangio-RVC-Fork/ '/content/Retrieval-based-Voice-Conversion-WebUI'")
+        run_cmd(f"git clone https://github.com/IAHispano/Applio-RVC-Fork.git '/content/Retrieval-based-Voice-Conversion-WebUI'")
         print("...")
         os.chdir(temp_repo_path)
+        run_cmd("git checkout fed45eb981a5295c17576caffb3ea997f0d670c6")
+        run_cmd("git checkout 90e1022f04112cee4ad70520e7b1b53b88398065")
+        run_cmd("git checkout 3103bab22bbc3bc968482f8903393dfe451422dc")
+        run_cmd("git checkout 2bcbf0515e8f3998e7a4ae980422a3bce1af9516")
+        run_cmd("git checkout 4f4772744a6681a9ce8241cc479b090d37017070")
+        run_cmd("git checkout 7c33cba62399c173f1b615213631e77113354b1f")
+        run_cmd("git checkout fe53965069eea218c51ca79f970be1b7c662d688")
+        run_cmd("git checkout 8e5626ab56dc8e076d76e89fe383b3e32b2433fa")
+        run_cmd("git checkout d2f92aef275e9789e83051c974c71f44141762b5")
+        run_cmd("git checkout 02e34340989457949b2d39117800f20247038d8a")
+        run_cmd("git checkout f4b9749db2a4381e8e6b38f06cbac4ebe7d88f70")
+        run_cmd("git checkout f459a70008f430b907d4f02dab717e6771a97481")
+        run_cmd("git checkout e1eef40a2e50ebeff77f84fdfe1c641f57a1a35c")
+        run_cmd("git checkout d35a7367396936100b0e2e0eb14856ef5c0e79de")
+        run_cmd("git checkout ad696bdfefe78b10e85666296511100b031d13e8")
+        run_cmd("git checkout a6dd97d8a4698f7c53b9cd7a0b042a22448373b5")
+        run_cmd("git checkout 13fe8785a6c234cd11fb18c041321b8c9534ed00")
+        run_cmd("git checkout 4003a6511ab56e86d12f8df9d28954802e982b22")
+        run_cmd("git checkout ba9abdc147d5f5e3f12dc8ec8388f50a356a068e")
+        run_cmd("git checkout 432ed6a54a2f8ef9ff021791ad96bb16beb49388")
+        run_cmd("git checkout 8007a90414b64ee456f3361a3c64c4100cccf6e6")
+        run_cmd("git checkout 51e0849cb732a2e178625f22e82011705cb6683e")
+        run_cmd("git checkout 1428c024cda321d97c58eb6edcc01786a3e64e60")
+        run_cmd("git checkout 38518bebefc8324cbcac062427b03a3d34415629")
+        run_cmd("git checkout c3f6720e0eb716e21ca174f8a1f9e402d577a49c")
+        run_cmd("git checkout 2e78c126a43de0b9a43e57b46f0dfc628cf87933")
+        run_cmd("git checkout 208995769fd22bce0a0e62a3407169bf6d776eae")
+        run_cmd("git checkout 739463f58f15fd143c102f58458d483d719f6cf5")
+        run_cmd("git checkout d555bcd2541ce3e78a9391f9255eb17f9753b006")
+
         run_cmd("wget https://github.com/777gt/EasyGUI-RVC-Fork/raw/main/EasierGUI.py")
 
         # Edit the file here, before copying
@@ -175,7 +205,13 @@ def download_pretrained_models():
         ],
         "uvr5_weights": [
             "HP2-人声vocals+非人声instrumentals.pth",
-            "HP5-主旋律人声vocals+其他instrumentals.pth"
+            "HP5-主旋律人声vocals+其他instrumentals.pth",
+            "VR-DeEchoNormal.pth",
+            "VR-DeEchoDeReverb.pth",
+            "VR-DeEchoAggressive.pth",
+            "HP5_only_main_vocal.pth",
+            "HP3_all_vocals.pth",
+            "HP2_all_vocals.pth"
         ]
     }
 
