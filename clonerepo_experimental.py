@@ -224,7 +224,7 @@ def download_pretrained_models():
                 pbar.update()
 
         # Download hubert_base.pt to the base path
-        hubert_url = xdsame + "/assets/" + "hubert_base.pt"
+        hubert_url = base_url + "hubert_base.pt"
         hubert_filepath = os.path.join(base_path, "hubert_base.pt")
         download_file(hubert_url, hubert_filepath)
         pbar.update()
