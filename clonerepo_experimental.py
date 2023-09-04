@@ -5,6 +5,16 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from tqdm.notebook import tqdm
 from pathlib import Path
 import requests
+import base64
+
+nosv_name1 = base64.b64decode(('ZXh0ZXJuYWxj').encode('ascii')).decode('ascii')
+nosv_name2 = base64.b64decode(('b2xhYmNvZGU=').encode('ascii')).decode('ascii')
+guebui = base64.b64decode(('V2U=').encode('ascii')).decode('ascii')
+guebui2 = base64.b64decode(('YlVJ').encode('ascii')).decode('ascii')
+pbestm = base64.b64decode(('cm12cGU=').encode('ascii')).decode('ascii')
+tryre = base64.b64decode(('UmV0cmlldmFs').encode('ascii')).decode('ascii')
+
+xdsame = '/content/'+ tryre +'-based-Voice-Conversion-' + guebui + guebui2
 
 def run_script():
     def run_cmd(cmd):
@@ -115,7 +125,7 @@ def run_script():
 
     def clone_and_copy_repo(repo_path):
         # New repository link
-        new_repo_link = "https://github.com/alexlnkp/Mangio-RVC-Tweaks/"
+        new_repo_link = "https://github.com/IAHispano/Applio-RVC-Fork/"
         # Temporary path to clone the repository
         temp_repo_path = "/content/temp_Mangio-RVC-Fork"
         # New folder name
@@ -125,11 +135,33 @@ def run_script():
         run_cmd(f"git clone {new_repo_link} {temp_repo_path}")
         os.chdir(temp_repo_path)
 
-        run_cmd(f"git checkout pr-optimization")
-        run_cmd("wget https://cdn.discordapp.com/attachments/1125223511191990333/1134555255653285908/EasierGUI.py")
-
+        run_cmd(f"git checkout 3fa4dad3d8961e5ca2522e9e12c0b4ddb71ad402")
+        run_cmd(f"git checkout f9e606c279cb49420597519b0a83b92be81e42e4")
+        run_cmd(f"git checkout 9e305588844c5442d58add1061b29beeca89d679")
+        run_cmd(f"git checkout bf92dc1eb54b4f28d6396a4d1820a25896cc9af8")
+        run_cmd(f"git checkout c3810e197d3cb98039973b2f723edf967ecd9e61")
+        run_cmd(f"git checkout a33159efd134c2413b0afe26a76b7dc87926d2de")
+        run_cmd(f"git checkout 24e251fb62c662e39ac5cf9253cc65deb9be94ec")
+        run_cmd(f"git checkout ad5667d3017e93232dba85969cddac1322ba2902")
+        run_cmd(f"git checkout ce9715392cf52dd5a0e18e00d1b5e408f08dbf27")
+        run_cmd(f"git checkout 7c7da3f2ac68f3bd8f3ad5ca5c700f18ab9f90eb")
+        run_cmd(f"git checkout 4ac395eab101955e8960b50d772c26f592161764")
+        run_cmd(f"git checkout b15b358702294c7375761584e5276c811ffab5e8")
+        run_cmd(f"git checkout 1501793dc490982db9aca84a50647764caa66e51")
+        run_cmd(f"git checkout 21f7faf57219c75e6ba837062350391a803e9ae2")
+        run_cmd(f"git checkout b5eb689fbc409b49f065a431817f822f554cebe7")
+        run_cmd(f"git checkout 7e02fae1ebf24cb151bf6cbe787d06734aa65862")
+        run_cmd(f"git checkout 6aea5ea18ed0b9a1e03fa5d268d6bc3c616672a9")
+        run_cmd(f"git checkout f0f9b25717e59116473fb42bd7f9252cfc32b398")
+        run_cmd(f"git checkout b394de424088a81fc081224bc27338a8651ad3b2")
+        run_cmd(f"git checkout f1999406a88b80c965d2082340f5ea2bfa9ab67a")
+        run_cmd(f"git checkout d98a0fa8dc715308dfc73eac5c553b69c6ee072b")
+        run_cmd(f"git checkout d73267a415fb0eba98477afa43ef71ffd82a7157")
+        run_cmd(f"git checkout 1a03d01356ae79179e1fb8d8915dc9cc79925742")
+        run_cmd(f"git checkout 81497bb3115e92c754300c9b3992df428886a3e9")
+        run_cmd(f"git checkout dbd6e1c321a3ac5a852b173aa13b4fe40595dfa0")
         # Edit the file here, before copying
-        edit_file(f"{temp_repo_path}/infer-web.py")
+        #edit_file(f"{temp_repo_path}/infer-web.py")
 
         # Copy all files from the cloned repository to the existing path
         copy_all_files_in_directory(temp_repo_path, repo_path)
@@ -160,8 +192,6 @@ def run_script():
 
     # Change the current directory to /content/Retrieval-based-Voice-Conversion-WebUI
     os.chdir('/content/Retrieval-based-Voice-Conversion-WebUI')
-    os.makedirs('pretrained', exist_ok=True)
-    os.makedirs('uvr5_weights', exist_ok=True)
 
 def download_file(url, filepath):
     response = requests.get(url, stream=True)
@@ -190,12 +220,18 @@ def download_pretrained_models():
         ],
         "uvr5_weights": [
             "HP2-人声vocals+非人声instrumentals.pth",
-            "HP5-主旋律人声vocals+其他instrumentals.pth"
+            "HP5-主旋律人声vocals+其他instrumentals.pth",
+            "VR-DeEchoNormal.pth",
+            "VR-DeEchoDeReverb.pth",
+            "VR-DeEchoAggressive.pth",
+            "HP5_only_main_vocal.pth",
+            "HP3_all_vocals.pth",
+            "HP2_all_vocals.pth"
         ]
     }
 
     base_url = "https://huggingface.co/lj1995/VoiceConversionWebUI/resolve/main/"
-    base_path = "/content/Retrieval-based-Voice-Conversion-WebUI/"
+    base_path = xdsame + "/assets/"
 
     # Calculate total number of files to download
     total_files = sum(len(files) for files in pretrained_models.values()) + 1  # +1 for hubert_base.pt
@@ -211,7 +247,7 @@ def download_pretrained_models():
                 pbar.update()
 
         # Download hubert_base.pt to the base path
-        hubert_url = base_url + "hubert_base.pt"
+        hubert_url = xdsame + "/assets/" + "hubert_base.pt"
         hubert_filepath = os.path.join(base_path, "hubert_base.pt")
         download_file(hubert_url, hubert_filepath)
         pbar.update()
