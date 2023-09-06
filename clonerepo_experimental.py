@@ -109,7 +109,7 @@ def run_script():
             print("No changes were needed.")
 
     # Define the repo path
-    repo_path = '/content/'+ tryre +'-based-Voice-Conversion-' + guebui + guebui2
+    repo_path = '/content/Retrieval-based-Voice-Conversion-WebUI'
 
     def copy_all_files_in_directory(src_dir, dest_dir):
         # Iterate over all files in source directory
@@ -135,9 +135,9 @@ def run_script():
         run_cmd(f"git clone {new_repo_link} {temp_repo_path}")
         os.chdir(temp_repo_path)
 
-        #run_cmd(f"git checkout -f applio-recode")
         run_cmd(f"git checkout -f df1d90420edcba2a2e6afd8dc0f0c2a3eb3d64e3")
         run_cmd(f"git checkout df1d90420edcba2a2e6afd8dc0f0c2a3eb3d64e3")
+        run_cmd(f"git checkout -f df1d90420edcba2a2e6afd8dc0f0c2a3eb3d64e3")
         # Edit the file here, before copying
         #edit_file(f"{temp_repo_path}/infer-web.py")
 
@@ -156,7 +156,7 @@ def run_script():
     clone_and_copy_repo(repo_path)
 
     # Download the credentials file for RVC archive sheet
-    os.makedirs(xdsame, 'stats', exist_ok=True)
+    os.makedirs('/content/Retrieval-based-Voice-Conversion-WebUI/stats/', exist_ok=True)
     run_cmd("wget -q https://cdn.discordapp.com/attachments/945486970883285045/1114717554481569802/peppy-generator-388800-07722f17a188.json -O /content/Retrieval-based-Voice-Conversion-WebUI/stats/peppy-generator-388800-07722f17a188.json")
 
     # Forcefully delete any existing torchcrepe dependencies downloaded from an earlier run just in case
@@ -170,9 +170,6 @@ def run_script():
 
     # Change the current directory to /content/Retrieval-based-Voice-Conversion-WebUI
     os.chdir('/content/Retrieval-based-Voice-Conversion-WebUI')
-    os.makedirs('pretrained', exist_ok=True)
-    os.makedirs('uvr5_weights', exist_ok=True)
-
 
 def download_file(url, filepath):
     response = requests.get(url, stream=True)
@@ -211,7 +208,7 @@ def download_pretrained_models():
         ]
     }
 
-    base_url = "https://huggingface.co/lj1995/VoiceConversion" + guebui + guebui2 + "/resolve/main/"
+    base_url = "https://huggingface.co/lj1995/VoiceConversionWebUI/resolve/main/"
     base_path = xdsame + "/assets/" + "/hubert/"
 
     # Calculate total number of files to download
