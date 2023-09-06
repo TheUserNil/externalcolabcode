@@ -166,4 +166,3 @@ def setup_environment(ForceUpdateDependencies, ForceTemporaryStorage):
         shutil.copy('/content/CachedRVC.tar.gz', '/content/drive/MyDrive/RVC_Cached/CachedRVC.tar.gz')
         print('Updated CachedRVC.tar.gz copied to Google Drive.')
         print('Dependencies fully up to date; future runs should be faster.')
-
