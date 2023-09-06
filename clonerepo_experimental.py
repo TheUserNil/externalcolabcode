@@ -136,8 +136,8 @@ def run_script():
         os.chdir(temp_repo_path)
 
         run_cmd(f"git checkout -f applio-recode")
-        run_cmd(f"git checkout -f 0ffa1f394e086cef1f3134a9c6c57877647cbd83")
-        run_cmd(f"git checkout 0ffa1f394e086cef1f3134a9c6c57877647cbd83")
+        run_cmd(f"git checkout -f df1d90420edcba2a2e6afd8dc0f0c2a3eb3d64e3")
+        run_cmd(f"git checkout df1d90420edcba2a2e6afd8dc0f0c2a3eb3d64e3")
         # Edit the file here, before copying
         #edit_file(f"{temp_repo_path}/infer-web.py")
 
