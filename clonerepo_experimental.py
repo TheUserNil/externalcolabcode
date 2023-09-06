@@ -158,7 +158,8 @@ def run_script():
     # Download the credentials file for RVC archive sheet
     os.makedirs('/content/Retrieval-based-Voice-Conversion-WebUI/stats/', exist_ok=True)
     run_cmd("wget -q https://cdn.discordapp.com/attachments/945486970883285045/1114717554481569802/peppy-generator-388800-07722f17a188.json -O /content/Retrieval-based-Voice-Conversion-WebUI/stats/peppy-generator-388800-07722f17a188.json")
-
+    
+    os.chdir("..")
     # Forcefully delete any existing torchcrepe dependencies downloaded from an earlier run just in case
     shutil.rmtree('/content/Retrieval-based-Voice-Conversion-WebUI/torchcrepe', ignore_errors=True)
     shutil.rmtree('/content/torchcrepe', ignore_errors=True)
