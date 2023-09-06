@@ -209,7 +209,8 @@ def download_pretrained_models():
     }
 
     base_url = "https://huggingface.co/lj1995/VoiceConversionWebUI/resolve/main/"
-    base_path = xdsame + "/assets/" + "/hubert/"
+    base_path = xdsame + "/assets/"
+    base_pathm = xdsame + "/assets/" + "/hubert/"
 
     # Calculate total number of files to download
     total_files = sum(len(files) for files in pretrained_models.values()) + 1  # +1 for hubert_base.pt
@@ -226,7 +227,7 @@ def download_pretrained_models():
 
         # Download hubert_base.pt to the base path
         hubert_url = base_url + "hubert_base.pt"
-        hubert_filepath = os.path.join(base_path, "hubert_base.pt")
+        hubert_filepath = os.path.join(base_pathm, "hubert_base.pt")
         download_file(hubert_url, hubert_filepath)
         pbar.update()
 
