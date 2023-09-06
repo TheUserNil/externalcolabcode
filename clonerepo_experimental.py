@@ -135,8 +135,8 @@ def run_script():
         run_cmd(f"git clone {new_repo_link} {temp_repo_path}")
         os.chdir(temp_repo_path)
         run_cmd(f"git checkout -f applio-recode")
-        run_cmd(f"git checkout -f 35e15d43ca8b7e968d883e07103571bb683e1714")
-        run_cmd(f"git checkout 35e15d43ca8b7e968d883e07103571bb683e1714")
+        run_cmd(f"git checkout -f e0e5933b1a3792eaa820c7aa931c96d6f9db200a")
+        run_cmd(f"git checkout e0e5933b1a3792eaa820c7aa931c96d6f9db200a")
         run_cmd(f"git fetch")
         # Edit the file here, before copying
         #edit_file(f"{temp_repo_path}/infer-web.py")
