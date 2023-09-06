@@ -135,7 +135,7 @@ def run_script():
         run_cmd(f"git clone {new_repo_link} {temp_repo_path}")
         os.chdir(temp_repo_path)
 
-        run_cmd(f"git checkout -f applio-recode")
+        #run_cmd(f"git checkout -f applio-recode")
         run_cmd(f"git checkout -f df1d90420edcba2a2e6afd8dc0f0c2a3eb3d64e3")
         run_cmd(f"git checkout df1d90420edcba2a2e6afd8dc0f0c2a3eb3d64e3")
         # Edit the file here, before copying
