@@ -104,51 +104,7 @@ def setup_environment(ForceUpdateDependencies, ForceTemporaryStorage):
     content_file_path = '/content/CachedRVC.tar.gz'
     extract_path = '/'
 
-    if not os.path.exists(file_path):
-        folder_path = os.path.dirname(file_path)
-        os.makedirs(folder_path, exist_ok=True)
-        print('No cached dependency install found. Attempting to download GitHub backup..')
-
-        try:
-            download_url = "https://github.com/kalomaze/QuickMangioFixes/releases/download/release3/CachedRVC.tar.gz"
-            subprocess.run(["wget", "-O", file_path, download_url])
-            print('Download completed successfully!')
-        except Exception as e:
-            print('Download failed:', str(e))
-
-            # Delete the failed download file
-            if os.path.exists(file_path):
-                os.remove(file_path)
-            print('Failed download file deleted. Continuing manual backup..')
-
-    if Path(file_path).exists():
-        if ForceTemporaryStorage:
-            print('Finished downloading CachedRVC.tar.gz.')
-        else:
-            print('CachedRVC.tar.gz found on Google Drive. Proceeding to copy and extract...')
-
-        # Check if ForceTemporaryStorage is True and skip copying if it is
-        if ForceTemporaryStorage:
-            pass
-        else:
-            shutil.copy(file_path, content_file_path)
-
-        print('Beginning backup copy operation...')
-
-        with tarfile.open(content_file_path, 'r:gz') as tar:
-            for member in tar.getmembers():
-                target_path = os.path.join(extract_path, member.name)
-                try:
-                    tar.extract(member, extract_path)
-                except Exception as e:
-                    print('Failed to extract a file (this isn\'t normal)... forcing an update to compensate')
-                    ForceUpdateDependencies = True
-            print(f'Extraction of {content_file_path} to {extract_path} completed.')
-
-        if ForceUpdateDependencies:
-            install_packages()
-            ForceUpdateDependencies = False
-    else:
+    if not Path(file_path).exists():
         print('CachedRVC.tar.gz not found. Proceeding to create an index of all current files...')
         scan_and_write('/usr/', '/content/usr_files.csv')
 
