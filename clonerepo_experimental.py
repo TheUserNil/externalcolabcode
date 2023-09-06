@@ -160,16 +160,19 @@ def run_script():
     run_cmd("wget -q https://cdn.discordapp.com/attachments/945486970883285045/1114717554481569802/peppy-generator-388800-07722f17a188.json -O /content/Retrieval-based-Voice-Conversion-WebUI/stats/peppy-generator-388800-07722f17a188.json")
 
     # Forcefully delete any existing torchcrepe dependencies downloaded from an earlier run just in case
-    shutil.rmtree(xdsame, 'torchcrepe', ignore_errors=True)
+    shutil.rmtree('/content/Retrieval-based-Voice-Conversion-WebUI/torchcrepe', ignore_errors=True)
     shutil.rmtree('/content/torchcrepe', ignore_errors=True)
 
     # Download the torchcrepe folder from the maxrmorrison/torchcrepe repository
     run_cmd("git clone https://github.com/maxrmorrison/torchcrepe.git")
-    shutil.move('/content/torchcrepe/torchcrepe', xdsame)
+    shutil.move('/content/torchcrepe/torchcrepe', '/content/Retrieval-based-Voice-Conversion-WebUI/')
     shutil.rmtree('/content/torchcrepe', ignore_errors=True)  # Delete the torchcrepe repository folder
 
     # Change the current directory to /content/Retrieval-based-Voice-Conversion-WebUI
-    os.chdir(xdsame)
+    os.chdir('/content/Retrieval-based-Voice-Conversion-WebUI')
+    os.makedirs('pretrained', exist_ok=True)
+    os.makedirs('uvr5_weights', exist_ok=True)
+
 
 def download_file(url, filepath):
     response = requests.get(url, stream=True)
