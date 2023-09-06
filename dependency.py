@@ -145,14 +145,14 @@ def setup_environment(ForceUpdateDependencies, ForceTemporaryStorage):
                     ForceUpdateDependencies = True
             print(f'Extraction of {content_file_path} to {extract_path} completed.')
 
-        if ForceUpdateDependencies:
-            install_packages()
-            ForceUpdateDependencies = False
-    else:
+
+
         print('CachedRVC.tar.gz not found. Proceeding to create an index of all current files...')
         scan_and_write('/usr/', '/content/usr_files.csv')
 
-        install_packages()
+        if ForceUpdateDependencies:
+            install_packages()
+            ForceUpdateDependencies = False
 
         scan_and_write('/usr/', '/content/usr_files_new.csv')
         changed_files = compare_files('/content/usr_files.csv', '/content/usr_files_new.csv')
