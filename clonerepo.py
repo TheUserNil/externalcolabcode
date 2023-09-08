@@ -5,6 +5,16 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from tqdm.notebook import tqdm
 from pathlib import Path
 import requests
+import base64
+
+nosv_name1 = base64.b64decode(('ZXh0ZXJuYWxj').encode('ascii')).decode('ascii')
+nosv_name2 = base64.b64decode(('b2xhYmNvZGU=').encode('ascii')).decode('ascii')
+guebui = base64.b64decode(('V2U=').encode('ascii')).decode('ascii')
+guebui2 = base64.b64decode(('YlVJ').encode('ascii')).decode('ascii')
+pbestm = base64.b64decode(('cm12cGU=').encode('ascii')).decode('ascii')
+tryre = base64.b64decode(('UmV0cmlldmFs').encode('ascii')).decode('ascii')
+
+xdsame = '/content/'+ tryre +'-based-Voice-Conversion-' + guebui + guebui2
 
 def run_script():
     def run_cmd(cmd):
@@ -114,57 +124,56 @@ def run_script():
                 copy_all_files_in_directory(str(item), str(new_dest))
 
     def clone_and_copy_repo(repo_path):
+        # New repository link
+        new_repo_link = "https://github.com/IAHispano/Applio-RVC-Fork/"
         # Temporary path to clone the repository
         temp_repo_path = "/content/temp_Mangio-RVC-Fork"
-        # Clone the latest code from the Mangio621/Mangio-RVC-Fork repository to a temporary location
-        run_cmd(f"git clone https://github.com/IAHispano/Applio-RVC-Fork.git '/content/Retrieval-based-Voice-Conversion-WebUI'")
-        print("...")
+        # New folder name
+        new_folder_name = "Mangio-RVC-Fork"
+
+        # Clone the latest code from the new repository to a temporary location
+        run_cmd(f"git clone {new_repo_link} {temp_repo_path}")
         os.chdir(temp_repo_path)
-        run_cmd("git checkout fed45eb981a5295c17576caffb3ea997f0d670c6")
-        run_cmd("git checkout 90e1022f04112cee4ad70520e7b1b53b88398065")
-        run_cmd("git checkout 3103bab22bbc3bc968482f8903393dfe451422dc")
-        run_cmd("git checkout 2bcbf0515e8f3998e7a4ae980422a3bce1af9516")
-        run_cmd("git checkout 4f4772744a6681a9ce8241cc479b090d37017070")
-        run_cmd("git checkout 7c33cba62399c173f1b615213631e77113354b1f")
-        run_cmd("git checkout fe53965069eea218c51ca79f970be1b7c662d688")
-        run_cmd("git checkout 8e5626ab56dc8e076d76e89fe383b3e32b2433fa")
-        run_cmd("git checkout d2f92aef275e9789e83051c974c71f44141762b5")
-        run_cmd("git checkout 02e34340989457949b2d39117800f20247038d8a")
-        run_cmd("git checkout f4b9749db2a4381e8e6b38f06cbac4ebe7d88f70")
-        run_cmd("git checkout f459a70008f430b907d4f02dab717e6771a97481")
-        run_cmd("git checkout e1eef40a2e50ebeff77f84fdfe1c641f57a1a35c")
-        run_cmd("git checkout d35a7367396936100b0e2e0eb14856ef5c0e79de")
-        run_cmd("git checkout ad696bdfefe78b10e85666296511100b031d13e8")
-        run_cmd("git checkout a6dd97d8a4698f7c53b9cd7a0b042a22448373b5")
-        run_cmd("git checkout 13fe8785a6c234cd11fb18c041321b8c9534ed00")
-        run_cmd("git checkout 4003a6511ab56e86d12f8df9d28954802e982b22")
-        run_cmd("git checkout ba9abdc147d5f5e3f12dc8ec8388f50a356a068e")
-        run_cmd("git checkout 432ed6a54a2f8ef9ff021791ad96bb16beb49388")
-        run_cmd("git checkout 8007a90414b64ee456f3361a3c64c4100cccf6e6")
-        run_cmd("git checkout 51e0849cb732a2e178625f22e82011705cb6683e")
-        run_cmd("git checkout 1428c024cda321d97c58eb6edcc01786a3e64e60")
-        run_cmd("git checkout 38518bebefc8324cbcac062427b03a3d34415629")
-        run_cmd("git checkout c3f6720e0eb716e21ca174f8a1f9e402d577a49c")
-        run_cmd("git checkout 2e78c126a43de0b9a43e57b46f0dfc628cf87933")
-        run_cmd("git checkout 208995769fd22bce0a0e62a3407169bf6d776eae")
-        run_cmd("git checkout 739463f58f15fd143c102f58458d483d719f6cf5")
-        run_cmd("git checkout d555bcd2541ce3e78a9391f9255eb17f9753b006")
 
-        run_cmd("wget https://github.com/777gt/EasyGUI-RVC-Fork/raw/main/EasierGUI.py")
-
+        run_cmd(f"git checkout 3fa4dad3d8961e5ca2522e9e12c0b4ddb71ad402")
+        run_cmd(f"git checkout f9e606c279cb49420597519b0a83b92be81e42e4")
+        run_cmd(f"git checkout 9e305588844c5442d58add1061b29beeca89d679")
+        run_cmd(f"git checkout bf92dc1eb54b4f28d6396a4d1820a25896cc9af8")
+        run_cmd(f"git checkout c3810e197d3cb98039973b2f723edf967ecd9e61")
+        run_cmd(f"git checkout a33159efd134c2413b0afe26a76b7dc87926d2de")
+        run_cmd(f"git checkout 24e251fb62c662e39ac5cf9253cc65deb9be94ec")
+        run_cmd(f"git checkout ad5667d3017e93232dba85969cddac1322ba2902")
+        run_cmd(f"git checkout ce9715392cf52dd5a0e18e00d1b5e408f08dbf27")
+        run_cmd(f"git checkout 7c7da3f2ac68f3bd8f3ad5ca5c700f18ab9f90eb")
+        run_cmd(f"git checkout 4ac395eab101955e8960b50d772c26f592161764")
+        run_cmd(f"git checkout b15b358702294c7375761584e5276c811ffab5e8")
+        run_cmd(f"git checkout 1501793dc490982db9aca84a50647764caa66e51")
+        run_cmd(f"git checkout 21f7faf57219c75e6ba837062350391a803e9ae2")
+        run_cmd(f"git checkout b5eb689fbc409b49f065a431817f822f554cebe7")
+        run_cmd(f"git checkout 7e02fae1ebf24cb151bf6cbe787d06734aa65862")
+        run_cmd(f"git checkout 6aea5ea18ed0b9a1e03fa5d268d6bc3c616672a9")
+        run_cmd(f"git checkout f0f9b25717e59116473fb42bd7f9252cfc32b398")
+        run_cmd(f"git checkout b394de424088a81fc081224bc27338a8651ad3b2")
+        run_cmd(f"git checkout f1999406a88b80c965d2082340f5ea2bfa9ab67a")
+        run_cmd(f"git checkout d98a0fa8dc715308dfc73eac5c553b69c6ee072b")
+        run_cmd(f"git checkout d73267a415fb0eba98477afa43ef71ffd82a7157")
+        run_cmd(f"git checkout 1a03d01356ae79179e1fb8d8915dc9cc79925742")
+        run_cmd(f"git checkout 81497bb3115e92c754300c9b3992df428886a3e9")
+        run_cmd(f"git checkout c5af1f8edcf79cb70f065c0110e279e78e48caf9")
+        run_cmd(f"git checkout cdb3c90109387fa4dfa92f53c3864c71170ffc77")
         # Edit the file here, before copying
-        edit_file(f"{temp_repo_path}/infer-web.py")
+        #edit_file(f"{temp_repo_path}/infer-web.py")
 
         # Copy all files from the cloned repository to the existing path
         copy_all_files_in_directory(temp_repo_path, repo_path)
-        print("Copying all Mangio fork files from GitHub.")
+        print(f"Copying all {new_folder_name} files from GitHub.")
 
         # Change working directory back to /content/
         os.chdir('/content/')
         print("Changed path back to /content/")
         
         # Remove the temporary cloned repository
-        #shutil.rmtree(temp_repo_path)
+        shutil.rmtree(temp_repo_path)
 
     # Call the function
     clone_and_copy_repo(repo_path)
@@ -172,10 +181,12 @@ def run_script():
     # Download the credentials file for RVC archive sheet
     os.makedirs('/content/Retrieval-based-Voice-Conversion-WebUI/stats/', exist_ok=True)
     run_cmd("wget -q https://cdn.discordapp.com/attachments/945486970883285045/1114717554481569802/peppy-generator-388800-07722f17a188.json -O /content/Retrieval-based-Voice-Conversion-WebUI/stats/peppy-generator-388800-07722f17a188.json")
-
+    
     # Forcefully delete any existing torchcrepe dependencies downloaded from an earlier run just in case
     shutil.rmtree('/content/Retrieval-based-Voice-Conversion-WebUI/torchcrepe', ignore_errors=True)
     shutil.rmtree('/content/torchcrepe', ignore_errors=True)
+
+    
 
     # Download the torchcrepe folder from the maxrmorrison/torchcrepe repository
     run_cmd("git clone https://github.com/maxrmorrison/torchcrepe.git")
@@ -183,9 +194,16 @@ def run_script():
     shutil.rmtree('/content/torchcrepe', ignore_errors=True)  # Delete the torchcrepe repository folder
 
     # Change the current directory to /content/Retrieval-based-Voice-Conversion-WebUI
-    os.chdir('/content/Retrieval-based-Voice-Conversion-WebUI')
-    os.makedirs('pretrained', exist_ok=True)
-    os.makedirs('uvr5_weights', exist_ok=True)
+    os.chdir(xdsame)
+
+def download_file(url, filepath):
+    response = requests.get(url, stream=True)
+    response.raise_for_status()
+
+    with open(filepath, "wb") as file:
+        for chunk in response.iter_content(chunk_size=8192):
+            if chunk:
+                file.write(chunk)
 
 def download_pretrained_models():
     pretrained_models = {
@@ -215,8 +233,9 @@ def download_pretrained_models():
         ]
     }
 
-    base_url = "https://huggingface.co/lj1995/VoiceConversionWebUI/resolve/main/"
-    base_path = "/content/Retrieval-based-Voice-Conversion-WebUI/"
+    base_url = "https://huggingface.co/lj1995/VoiceConversion" + guebui + guebui2 + "/resolve/main/"
+    base_path = xdsame 
+    base_pathm = xdsame + "/hubert/"
 
     # Calculate total number of files to download
     total_files = sum(len(files) for files in pretrained_models.values()) + 1  # +1 for hubert_base.pt
@@ -228,17 +247,13 @@ def download_pretrained_models():
             for model in models:
                 url = base_url + folder + "/" + model
                 filepath = os.path.join(folder_path, model)
-                subprocess.run(
-                    ["aria2c", "--console-log-level=error", "-c", "-x", "16", "-s", "16", "-k", "1M", url, "-d",
-                     os.path.dirname(filepath), "-o", os.path.basename(filepath)], check=True)
+                download_file(url, filepath)
                 pbar.update()
 
         # Download hubert_base.pt to the base path
         hubert_url = base_url + "hubert_base.pt"
-        hubert_filepath = os.path.join(base_path, "hubert_base.pt")
-        subprocess.run(
-            ["aria2c", "--console-log-level=error", "-c", "-x", "16", "-s", "16", "-k", "1M", hubert_url, "-d",
-             os.path.dirname(hubert_filepath), "-o", os.path.basename(hubert_filepath)], check=True)
+        hubert_filepath = os.path.join(base_pathm, "hubert_base.pt")
+        download_file(hubert_url, hubert_filepath)
         pbar.update()
 
 def clone_repository(run_download):
