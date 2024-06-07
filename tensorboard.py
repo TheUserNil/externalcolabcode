@@ -3,10 +3,9 @@ import gradio as gr
 def tensorboard():
   with gr.Row():
     gr.Markdown("## Tensorboard")
-    with gr.Row():
-      gr.HTML(
-                """
-                <iframe width="100%" 
+  with gr.Row():
+    gr.HTML(
+      """<iframe width="100%" 
                     height="700" 
                     src="http://localhost:6006" 
                     title="Tensordboard" 
@@ -16,4 +15,4 @@ def tensorboard():
                 """,
                 label="Tensorboard",
                 show_label=True
-            ) 
+                ) 
